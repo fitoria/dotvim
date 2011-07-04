@@ -1,6 +1,5 @@
 " Igor's VIM configuration file
 "
-" get the plugins from http://github.com/igorgue/dotvim
 call pathogen#infect() " Pathogen magic
 
 " Set syntax highlighting
@@ -29,7 +28,7 @@ set incsearch
 set ignorecase
 set smartcase
 
-" Tab completion
+" Completion
 set wildmenu
 set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*,*.bak,*.exe,*.pyc,*.DS_Store,*.db
@@ -134,6 +133,12 @@ if has("autocmd")
   au FileType html setlocal tabstop=2 shiftwidth=2 softtabstop=2
   au FileType xhtml setlocal tabstop=2 shiftwidth=2 softtabstop=2
   au FileType htmldjango setlocal tabstop=2 shiftwidth=2 softtabstop=2
+  au BufNewFile,BufRead admin.py setlocal filetype=python.django
+  au BufNewFile,BufRead urls.py setlocal filetype=python.django
+  au BufNewFile,BufRead models.py setlocal filetype=python.django
+  au BufNewFile,BufRead views.py setlocal filetype=python.django
+  au BufNewFile,BufRead settings.py setlocal filetype=python.django
+  au BufNewFile,BufRead forms.py setlocal filetype=python.django
 endif
 
 " Map ,e to open files in the same directory as the current file
