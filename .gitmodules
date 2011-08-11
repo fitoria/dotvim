@@ -3,7 +3,7 @@
 	url = git://github.com/vim-scripts/Color-Sampler-Pack.git
 [submodule "bundle/vim-ack"]
 	path = bundle/vim-ack
-	url = http://github.com/mileszs/ack.vim.git
+	url = git://github.com/mileszs/ack.vim.git
 [submodule "bundle/vim-snipmate"]
 	path = bundle/vim-snipmate
 	url = git://github.com/msanders/snipmate.vim.git
@@ -54,7 +54,7 @@
 	url = git://github.com/michaeljsmith/vim-indent-object.git
 [submodule "bundle/vim-snipmate-for-django"]
 	path = bundle/vim-snipmate-for-django
-	url = https://github.com/robhudson/snipmate_for_django.git
+	url = gits://github.com/robhudson/snipmate_for_django.git
 [submodule "bundle/vim-irblack"]
 	path = bundle/vim-irblack
 	url = git://github.com/wgibbs/vim-irblack.git
@@ -63,7 +63,7 @@
 	url = git://github.com/mattn/gist-vim.git
 [submodule "bundle/vim-colors-solarized"]
 	path = bundle/vim-colors-solarized
-	url = https://github.com/altercation/vim-colors-solarized.git
+	url = gits://github.com/altercation/vim-colors-solarized.git
 [submodule "bundle/vim-javascript"]
 	path = bundle/vim-javascript
 	url = git://github.com/pangloss/vim-javascript.git
@@ -81,7 +81,7 @@
 	url = git://github.com/hallettj/jslint.vim.git
 [submodule "bundle/vim-tagbar"]
 	path = bundle/vim-tagbar
-	url = https://github.com/majutsushi/tagbar.git
+	url = gits://github.com/majutsushi/tagbar.git
 [submodule "bundle/vim-nerdcommenter"]
 	path = bundle/vim-nerdcommenter
 	url = git://github.com/ddollar/nerdcommenter.git
@@ -99,7 +99,7 @@
 	url = git://github.com/tsaleh/vim-align.git
 [submodule "bundle/vim-surround"]
 	path = bundle/vim-surround
-	url = https://github.com/tpope/vim-surround.git
+	url = gits://github.com/tpope/vim-surround.git
 [submodule "bundle/vim-pony"]
 	path = bundle/vim-pony
-	url = https://github.com/rainerborene/vim-pony.git
+	url = gits://github.com/rainerborene/vim-pony.git
