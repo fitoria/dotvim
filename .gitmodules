@@ -88,9 +88,6 @@
 [submodule "bundle/vim-textile"]
 	path = bundle/vim-textile
 	url = git://github.com/timcharper/textile.vim.git
-[submodule "bundle/vim-nerdtree"]
-	path = bundle/vim-nerdtree
-	url = git://github.com/wycats/nerdtree.git
 [submodule "bundle/vim-searchfold"]
 	path = bundle/vim-searchfold
 	url = git://github.com/vim-scripts/searchfold.vim.git
@@ -103,3 +100,10 @@
 [submodule "bundle/vim-pony"]
 	path = bundle/vim-pony
 	url = gits://github.com/rainerborene/vim-pony.git
+	url = https://github.com/rainerborene/vim-pony.git
+[submodule "bundle/vim-tabular"]
+	path = bundle/vim-tabular
+	url = https://github.com/godlygeek/tabular.git
+[submodule "bundle/vim-nerdtree"]
+	path = bundle/vim-nerdtree
+	url = https://github.com/scrooloose/nerdtree.git

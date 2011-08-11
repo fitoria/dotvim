@@ -7,7 +7,7 @@ if has("gui_macvim")
     set guioptions-=r
 
     "set guifont=Bitstream\ Vera\ Sans\ Mono:h12
-    set guifont=Anonymous\ Pro:h14
+    "set guifont=Anonymous\ Pro:h14
 
     " Command-F for CommandT
     map <D-F> :PeepOpen<CR>
@@ -32,8 +32,8 @@ if has("gui_macvim")
     "colorscheme solarized
     "colorscheme vividchalk
     "colorscheme molokai
-    "colorscheme molokai+
-    colorscheme darkbone
+    colorscheme molokai+
+    "colorscheme darkbone
     "colorscheme grb4
 endif
 
