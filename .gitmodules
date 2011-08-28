@@ -96,14 +96,16 @@
 	url = git://github.com/tsaleh/vim-align.git
 [submodule "bundle/vim-surround"]
 	path = bundle/vim-surround
-	url = gits://github.com/tpope/vim-surround.git
+	url = git://github.com/tpope/vim-surround.git
 [submodule "bundle/vim-pony"]
 	path = bundle/vim-pony
-	url = gits://github.com/rainerborene/vim-pony.git
-	url = https://github.com/rainerborene/vim-pony.git
+	url = git://github.com/rainerborene/vim-pony.git
 [submodule "bundle/vim-tabular"]
 	path = bundle/vim-tabular
-	url = https://github.com/godlygeek/tabular.git
+	url = git://github.com/godlygeek/tabular.git
 [submodule "bundle/vim-nerdtree"]
 	path = bundle/vim-nerdtree
-	url = https://github.com/scrooloose/nerdtree.git
+	url = http://github.com/scrooloose/nerdtree.git
+[submodule "bundle/vim-tomorrow-theme"]
+	path = bundle/vim-tomorrow-theme
+	url = git://github.com/ChrisKempson/Tomorrow-Theme.git
