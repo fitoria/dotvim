@@ -1,5 +1,9 @@
 " Igor's VIM configuration file
 "
+
+" Mark as loaded if it's not compatible.
+let g:CSApprox_verbose_level = 0
+
 call pathogen#infect() " Pathogen magic
 
 " Set syntax highlighting
@@ -94,7 +98,7 @@ if has("undofile")
 endif
 
 set viminfo='20,<50,s10,h
-set statusline=%<%f%=\ [%1*%M%*%n%R%H]\ %-19(%3l,%02c%03V%)
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 " omni completion
 set ofu=syntaxcomplete#Complete
@@ -108,13 +112,14 @@ if has("mac")
   map <D-2> :NERDTreeToggle<CR>
   map <D-3> :TagbarToggle<CR>
   map <D-4> :noh<CR>
-  nnoremap <D-9> :TagbarToggle<CR>
+  map <D-5> :GundoToggle<CR>
   map <D-j> gj
   map <D-k> gk
 else
   map <F2> :NERDTreeToggle<CR>
   map <F3> :TagbarToggle<CR>
   map <F4> :noh<CR>
+  map <F5> :GundoToggle<CR>
 endif
 
 map <C-h> <C-w>h
@@ -132,7 +137,7 @@ au BufNewFile,BufRead Capfile setfiletype ruby
 
 au FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2
 au FileType coffee setlocal tabstop=2 shiftwidth=2 softtabstop=2
-au FileType javascript setlocal tabstop=4 shiftwidth=4 softtabstop=4
+au FileType javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2
 au FileType haskell setlocal ai
 au FileType scala setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
@@ -188,6 +193,25 @@ function! <SID>SynStack()
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
 
+if has("cscope")
+  " uncoment this and set if vim can't find it
+  "set csprg=/usr/local/bin/cscope
+  set csto=0
+  set cst
+  set nocsverb
+  " add any database in current directory
+  if filereadable("cscope.out")
+    cs add cscope.out
+    " else add database pointed to by environment
+  elseif $CSCOPE_DB != ""
+    cs add $CSCOPE_DB
+  endif
+  set csverb
+endif
+
+" Use ack to grep
+set grepprg=ack
+
 " All the small things(tm)
 set mouse=a         " enable mouse
 set ls=2            " always show status line
@@ -210,6 +234,9 @@ set hidden
 
 " Some JSLINT settings
 let $JS_CMD='node'
+
+" Autoclean fugitive buffers
+autocmd BufReadPost fugitive://* set bufhidden=delete
 
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))

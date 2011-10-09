@@ -9,7 +9,7 @@ if has("gui_macvim")
     "set guifont=Bitstream\ Vera\ Sans\ Mono:h12
     "set guifont=Anonymous\ Pro:h14
 
-    " Command-F for CommandT
+    " Command-F for FufFile
     map <D-F> :PeepOpen<CR>
 
     " Command-Return for fullscreen
