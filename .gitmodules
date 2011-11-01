@@ -114,22 +114,22 @@
 	url = http://github.com/sjl/gundo.vim.git
 [submodule "bundle/vim-delimitmate"]
 	path = bundle/vim-delimitmate
-	url = https://github.com/Raimondi/delimitMate.git
+	url = git://github.com/Raimondi/delimitMate.git
 [submodule "bundle/vim-closetag"]
 	path = bundle/vim-closetag
 	url = git://github.com/docunext/closetag.vim.git
 [submodule "bundle/vim-csapprox"]
 	path = bundle/vim-csapprox
-	url = https://github.com/godlygeek/csapprox.git
+	url = git://github.com/godlygeek/csapprox.git
 [submodule "bundle/vim-hexhighlight"]
 	path = bundle/vim-hexhighlight
-	url = https://github.com/vim-scripts/hexHighlight.vim.git
+	url = git://github.com/vim-scripts/hexHighlight.vim.git
 [submodule "bundle/vim-fuzzyfinder"]
 	path = bundle/vim-fuzzyfinder
-	url = https://github.com/clones/vim-fuzzyfinder.git
+	url = git://github.com/clones/vim-fuzzyfinder.git
 [submodule "bundle/vim-l9"]
 	path = bundle/vim-l9
-	url = https://github.com/clones/vim-l9.git
+	url = git://github.com/clones/vim-l9.git
 [submodule "bundle/vim-python-mode"]
 	path = bundle/vim-python-mode
-	url = https://github.com/klen/python-mode.git
+	url = git://github.com/klen/python-mode.git
