@@ -55,7 +55,7 @@ def get_dotvim
   puts "Cloning repo locally".red
   puts "Executing git clone".green
 
-  `cd ~ && git clone https://github.com/igorgue/dotvim.git .vim`
+  `cd ~ && git clone git://github.com/fitoria/dotvim.git .vim`
 
   puts "Getting submodules".green
   `cd ~/.vim && git submodule init && git submodule update`

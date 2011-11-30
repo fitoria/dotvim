@@ -109,7 +109,6 @@
 [submodule "bundle/vim-tagbar"]
 	path = bundle/vim-tagbar
 	url = git://github.com/majutsushi/tagbar.git
-    ignore = dirty
 [submodule "bundle/vim-nerdcommenter"]
 	path = bundle/vim-nerdcommenter
 	url = git://github.com/ddollar/nerdcommenter.git
@@ -144,7 +143,7 @@
     ignore = dirty
 [submodule "bundle/vim-gundo"]
 	path = bundle/vim-gundo
-	url = http://github.com/sjl/gundo.vim.git
+	url = git://github.com/sjl/gundo.vim.git
     ignore = dirty
 [submodule "bundle/vim-delimitmate"]
 	path = bundle/vim-delimitmate
