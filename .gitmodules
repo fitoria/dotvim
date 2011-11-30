@@ -181,3 +181,7 @@
 	path = bundle/vim-konira
 	url = git://github.com/alfredodeza/konira.vim.git
     ignore = dirty
+[submodule "bundle/vim-snipmate-snippets"]
+	path = bundle/vim-snipmate-snippets
+	url = git://github.com/scrooloose/snipmate-snippets.git 
+    ignore = dirty
