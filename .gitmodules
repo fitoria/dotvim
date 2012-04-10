@@ -185,3 +185,14 @@
 	path = bundle/vim-snipmate-snippets
 	url = git://github.com/scrooloose/snipmate-snippets.git 
     ignore = dirty
+[submodule "bundle/vim-less"]
+	path = bundle/vim-less
+	url = git://github.com/lunaru/vim-less.git
+    ignore = dirty
+[submodule "bundle/vim-powerline"]
+	path = bundle/vim-powerline
+	url = git://github.com/Lokaltog/vim-powerline.git
+    ignore = dirty
+[submodule "bundle/vim-ctrlp"]
+	path = bundle/vim-ctrlp
+	url = git://github.com/kien/ctrlp.vim

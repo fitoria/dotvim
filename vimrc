@@ -1,12 +1,28 @@
 " Igor's VIM configuration file
-"
 
 " Mark as loaded if it's not compatible.
 let g:CSApprox_verbose_level = 0
-let g:pymode_lint = 0 " Disable annoying pylint mode plugin
 
-call pathogen#runtime_append_all_bundles() " Pathogen magic
+" Pymode options.
+let g:pymode_lint = 0 " Disable annoying pylint mode plugin
+let g:pymode_virtualenv = 0 " Disable broken virtualenv plugin
+let g:pymode_options_fold = 0 " I don't like folding
+
+" Fancy powerline.
+let g:Powerline_symbols = 'fancy'
+
+if !has('python')
+  let g:pymode = 0
+end
+
+" Pathogen load
+filetype off
+
+call pathogen#infect()
 call pathogen#helptags()
+
+filetype plugin indent on
+syntax on
 
 " Set syntax highlighting
 set background=dark
@@ -21,7 +37,6 @@ set ruler           " show the cursor position all the time
 set encoding=utf-8
 
 " Whitespace stuff
-set nowrap
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
@@ -50,13 +65,17 @@ if has("autocmd")
 endif
 
 " Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
-au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru}    set ft=ruby
+au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} set ft=ruby
 
 " add json syntax highlighting
 au BufNewFile,BufRead *.json set ft=javascript
 
-" make Python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
+" adds less syntax highlighting
+au BufNewFile,BufRead *.json set ft=javascript
+
+" make Python follow PEP8 (http://www.python.org/dev/peps/pep-0008/)
 au FileType python set softtabstop=4 tabstop=4 shiftwidth=4
+au FileType less set softtabstop=2 tabstop=2 shiftwidth=2
 
 " Python highlighting errors
 let python_highlight_all=1
@@ -107,7 +126,7 @@ set ofu=syntaxcomplete#Complete
 
 " syntax for multiple tag files are
 " set tags=/my/dir1/tags, /my/dir2/tags
-set tags=tags;$HOME/.vim/tags/ "recursively searches directory for 'tags' file
+set tags=tags;$HOME/.vim/tags/;$HOME/tmp/tags/ "recursively searches directory for 'tags' file
 
 " Useful keyboard-shortcuts
 if has("mac")
@@ -115,6 +134,7 @@ if has("mac")
   map <D-3> :TagbarToggle<CR>
   map <D-4> :noh<CR>
   map <D-5> :GundoToggle<CR>
+  map <D-6> :JSLintToggle<CR>
   map <D-j> gj
   map <D-k> gk
 else
@@ -122,6 +142,7 @@ else
   map <F3> :TagbarToggle<CR>
   map <F4> :noh<CR>
   map <F5> :GundoToggle<CR>
+  map <F6> :JSLintToggle<CR>
 endif
 
 map <C-h> <C-w>h
@@ -141,8 +162,9 @@ au FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2
 au FileType coffee setlocal tabstop=2 shiftwidth=2 softtabstop=2
 au FileType javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2
 au FileType haskell setlocal ai
+au FileType less setlocal ai
+au FileType less setlocal tabstop=2 shiftwidth=2 softtabstop=2
 au FileType scala setlocal tabstop=2 shiftwidth=2 softtabstop=2
-
 au FileType html setlocal tabstop=2 shiftwidth=2 softtabstop=2
 au FileType xhtml setlocal tabstop=2 shiftwidth=2 softtabstop=2
 au FileType htmldjango setlocal tabstop=2 shiftwidth=2 softtabstop=2
@@ -153,6 +175,7 @@ au BufNewFile,BufRead models.py setlocal filetype=python.django
 au BufNewFile,BufRead views.py setlocal filetype=python.django
 au BufNewFile,BufRead settings.py setlocal filetype=python.django
 au BufNewFile,BufRead forms.py setlocal filetype=python.django
+au BufNewFile,BufRead *.as setlocal filetype=actionscript
 
 " Map ,e to open files in the same directory as the current file
 map <leader>e :e <C-R>=expand("%:h")<cr>/
@@ -190,7 +213,7 @@ command! TalibanMode call TalibanMode()
 
 
 " Show syntax highlighting groups for word under cursor
-nmap <C-S-P> :call <SID>SynStack()<CR>
+nmap <C-S-X> :call <SID>SynStack()<CR>
 function! <SID>SynStack()
   if !exists("*synstack")
     return
@@ -237,12 +260,12 @@ set hls
 set showtabline=2
 set hidden
 set cursorline      " Cursor line to see where my cursor is, smart.
-
-" Some JSLINT settings
-let $JS_CMD='node'
+set t_Co=256
 
 " Autoclean fugitive buffers
 autocmd BufReadPost fugitive://* set bufhidden=delete
+
+let g:JSLintHighlightErrorLine = 0
 
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
