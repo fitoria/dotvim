@@ -1,5 +1,3 @@
-Here we dragons
-
 Install
 =======
 
@@ -7,9 +5,8 @@ Install
 
 Run this from your terminal:
 
-    curl https://raw.github.com/fitoria/dotvim/master/install.rb | ruby
+    curl --silent https://raw.githubusercontent.com/fitoria/dotvim/master/install.sh | sh
 
-Y U NO TRUST ME?
 
 ### Manual Install ###
 
